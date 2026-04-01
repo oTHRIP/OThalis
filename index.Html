@@ -3,11 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>PortCo TH</title>
+    <meta name="description" content="Portfólio de Thalis Henrick - Desenvolvedor de Jogos e Modelador 3D">
+    <meta name="author" content="Thalis Henrick">
+    <meta name="keywords" content="game developer, 3D modeler, Roblox, portfolio">
+    <title>PortCo TH | Thalis Henrick</title>
+    
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
     <!-- CSS Principal -->
     <link rel="stylesheet" href="style.css">
 </head>
@@ -75,7 +81,7 @@
                     <p>3D modeling for creating and managing detailed assets.</p>
                 </div>
             </div>
-            <div style="margin-top: 1rem; font-style: italic; color:#BBB0FF; text-align:center;">
+            <div class="attention-text">
                 Attention to detail is what makes your business succeed
             </div>
         </div>
@@ -86,7 +92,7 @@
             </div>
 			
             <div class="games-container">
-                <!-- Friend Chat - Carrega automaticamente todas as imagens da pasta -->
+                <!-- Friend Chat -->
                 <div class="game-row">
                     <div class="game-slider">
                         <div class="slider-container" id="friendChatSlider">
@@ -100,13 +106,13 @@
                         <div class="game-name">Friend Chat</div>
                         <div class="game-desc">This game was developed by me and a friend under the codename Mikashi. We created this game with the intention of providing a fun experience for people to interact with each other and chat</div>
                         <div class="game-badge"><i class="fa fa-comments"></i> My Game</div>
-                        <p style="margin-top: 1rem; font-size:0.85rem; opacity:0.8;">
+                        <p class="creator-credit">
                             <i class="fa fa-code"></i> By: Mikashi & Thrip
                         </p>
                     </div>
                 </div>
 
-                <!-- 3D Models - Carrega automaticamente todas as imagens da pasta -->
+                <!-- 3D Models -->
                 <div class="game-row">
                     <div class="game-slider">
                         <div class="slider-container" id="modelsSlider">
@@ -127,13 +133,15 @@
     </div>
     <footer>
         <p>© 2026 Thalis Henrick — Desenvolvedor | 🇧🇷</p>
-        <p><i class="fab fa-github"></i> /OThrip  |  <i class="fa fa-gamepad"></i> oThrip</p>
+        <p class="social-links">
+            <i class="fab fa-github"></i> /OThrip &nbsp;&nbsp;|&nbsp;&nbsp;
+            <i class="fa fa-gamepad"></i> oThrip
+        </p>
     </footer>
 </main>
 
 <div id="toastMessage" class="toast-msg">📬 Mensagem enviada com sucesso!</div>
 
-<!-- JavaScript Principal -->
 <script src="script.js"></script>
 </body>
 </html>
