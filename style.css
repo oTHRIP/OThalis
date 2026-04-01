@@ -21,7 +21,7 @@ body {
     z-index: 5;
 }
 
-/* Animações da boca desfocada */
+/* ========= ANIMAÇÕES DA BOCA DESFOCADA ========= */
 .blurred-mouth {
     position: fixed;
     top: 0;
@@ -83,7 +83,7 @@ body {
     100% { transform: translate(35%, 70%) rotate(0deg); }
 }
 
-/* Hero Section */
+/* ========= HERO SECTION ========= */
 .hero {
     min-height: 90vh;
     display: flex;
@@ -157,7 +157,7 @@ body {
     box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3);
 }
 
-/* Modal de Contato */
+/* ========= MODAL DE CONTATO ========= */
 .modal {
     display: none;
     position: fixed;
@@ -180,6 +180,18 @@ body {
     max-width: 500px;
     width: 90%;
     border: 1px solid rgba(255, 107, 107, 0.3);
+    animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .modal-header {
@@ -201,6 +213,12 @@ body {
     font-size: 2rem;
     cursor: pointer;
     color: #FF9F6E;
+    transition: all 0.2s;
+}
+
+.close-modal:hover {
+    color: #FF6B6B;
+    transform: scale(1.1);
 }
 
 .form-group {
@@ -211,6 +229,7 @@ body {
     display: block;
     margin-bottom: 0.5rem;
     color: #BDC7F0;
+    font-weight: 500;
 }
 
 .form-group input,
@@ -222,12 +241,20 @@ body {
     border-radius: 12px;
     color: #eef5ff;
     font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    transition: all 0.2s;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
     border-color: #FF6B6B;
+    box-shadow: 0 0 10px rgba(255, 107, 107, 0.3);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
 }
 
 .btn-submit {
@@ -237,14 +264,22 @@ body {
     padding: 0.9rem;
     border-radius: 60px;
     font-weight: 700;
+    font-size: 1rem;
+    color: #0a0a1a;
     cursor: pointer;
+    transition: all 0.3s;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
 }
 
-/* Benefits Section */
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
+}
+
+/* ========= BENEFITS SECTION ========= */
 .benefits {
     margin: 4rem 0 3rem;
     z-index: 10;
@@ -294,9 +329,24 @@ body {
 .card h3 {
     font-size: 1.6rem;
     margin-bottom: 0.8rem;
+    font-weight: 600;
 }
 
-/* Games Section */
+.card p {
+    color: #C8D2FF;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.attention-text {
+    margin-top: 1rem;
+    font-style: italic;
+    color: #BBB0FF;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* ========= GAMES SECTION ========= */
 .games-section {
     margin: 5rem 0 5rem;
     position: relative;
@@ -307,6 +357,7 @@ body {
     font-size: 2.2rem;
     font-weight: 700;
     margin-bottom: 2rem;
+    letter-spacing: -0.3px;
 }
 
 .games-container {
@@ -324,6 +375,13 @@ body {
     padding: 1.8rem;
     backdrop-filter: blur(4px);
     border: 1px solid rgba(255,255,240,0.1);
+    transition: all 0.3s ease;
+}
+
+.game-row:hover {
+    border-color: rgba(255, 107, 107, 0.3);
+    transform: translateY(-3px);
+    background: rgba(12, 12, 30, 0.65);
 }
 
 .game-slider {
@@ -398,6 +456,7 @@ body {
 .game-name {
     font-size: 2rem;
     font-weight: 800;
+    letter-spacing: -0.5px;
     background: linear-gradient(145deg, #FFE6B0, #FFAC8E);
     background-clip: text;
     -webkit-background-clip: text;
@@ -420,17 +479,34 @@ body {
     width: fit-content;
     margin-top: 0.8rem;
     border: 0.5px solid #FF9F6E;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
 }
 
+.creator-credit {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+/* ========= FOOTER ========= */
 footer {
     text-align: center;
     padding: 3rem 0 2rem;
     border-top: 1px solid rgba(255,255,255,0.1);
     margin-top: 3rem;
+    position: relative;
+    z-index: 10;
     font-size: 0.85rem;
     color: #aaaadd;
 }
 
+.social-links {
+    margin-top: 0.5rem;
+}
+
+/* ========= TOAST MESSAGE ========= */
 .toast-msg {
     position: fixed;
     bottom: 30px;
@@ -444,6 +520,7 @@ footer {
     opacity: 0;
     transition: opacity 0.3s;
     pointer-events: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 .loading {
@@ -452,8 +529,42 @@ footer {
     color: #FF9F6E;
 }
 
+/* ========= RESPONSIVIDADE ========= */
 @media (max-width: 850px) {
-    .container { padding: 0 1.5rem; }
-    .hero h1, .hero .highlight-name { font-size: 3rem; }
-    .game-row { flex-direction: column; }
+    .container {
+        padding: 0 1.5rem;
+    }
+    .hero h1, .hero .highlight-name {
+        font-size: 3rem;
+    }
+    .hero .subhead {
+        font-size: 1.3rem;
+    }
+    .game-row {
+        flex-direction: column;
+    }
+    .game-info {
+        order: 1;
+    }
+    .game-slider {
+        order: 2;
+    }
+    .cards-grid {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 550px) {
+    .hero h1, .hero .highlight-name {
+        font-size: 2.3rem;
+    }
+    .section-title {
+        font-size: 1.8rem;
+    }
+    .games-title {
+        font-size: 1.6rem;
+    }
+    .game-name {
+        font-size: 1.6rem;
+    }
 }
